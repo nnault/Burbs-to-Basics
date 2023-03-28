@@ -1,0 +1,145 @@
+#container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100px 2fr 1fr;
+    grid-template-areas: 
+        "header nav"
+        "main main"
+        "footer footer" ;
+}
+
+header {
+    grid-area: header;
+    margin-top: 20px;
+}
+
+nav {
+    grid-area: nav;
+    margin-top: 20px;
+}
+
+main {
+    grid-area: main;
+    padding-top: 20px;
+    /* nested grid css starts here */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:  1fr 275px;
+    grid-template-areas:
+        ". image image image image description description description description description description ."
+       "items items items items items items items items items items items items"   
+    ;  
+/* nested grid css ends here */
+}
+
+/* nested grid content starts here */
+#items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "item1 item2 item3 item4";
+}
+
+#image {grid-area: image;}
+
+#description {grid-area: description;}
+
+#items {
+    grid-area: items;
+    background-image: url(../images/grass.png);
+    background-size: cover;
+    
+}
+/* nested grid content ends here*/
+
+/* second nested grid content starts here */
+#item1 {grid-area: item1;}
+#item2 {grid-area: item2;}
+#item3 {grid-area: item3;}
+#item4 {grid-area: item4;}
+/* second nested grid content ends here */
+
+footer {
+    grid-area: footer;
+}
+
+/*end layout styles*/
+
+
+/*start content styles*/
+body {
+    background-color: #D9D9AF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {color: #1F2754;}
+p {color: #1F2754;}
+a {text-decoration: none; font-weight: bold;}
+a:link {color: #CC6666;}
+a:visited {color:#CC6666;}
+a:hoover {color:#1F2754;}
+
+#image {text-align: center;}
+
+nav ul {
+    max-width: 500px;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    flex-wrap: wrap;
+}
+
+.item {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.t-nail {
+    border: 3px solid #CC6666;
+    width: 175px; height: 175px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+h3 {color: #FFBF86; font-size: 2em; font-weight: normal; margin: auto}
+
+/*footer styles start here*/
+footer {
+    color: #1F2754;
+    display: flex;
+    margin-top: 20px;
+}
+
+#address {
+    margin-right: auto;
+      margin-left: 90px;
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+    margin-right: 90px;
+}
+
+footer ul li {
+    margin-left: 10px;
+}
+
+
+/* Media Queries */
+
